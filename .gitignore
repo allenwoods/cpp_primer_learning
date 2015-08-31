@@ -1,6 +1,8 @@
 # No tex file and temporary files
 *.tex
-*.#*
+~*
+*~
+.#*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
