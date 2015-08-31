@@ -1,0 +1,45 @@
+#+LATEX_HEADER: \usepackage{ctex}
+#+TITLE: C++ Primer 实验项目
+#+AUTHOR: 林懿伦
+#+DATE: 2015 年 8 月 31 日
+
+* 环境配置
+
+** 系统与GCC版本
+
+ #+BEGIN_EXAMPLE
+ g++ (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4
+ #+END_EXAMPLE
+
+** 编辑器版本
+   #+BEGIN_EXAMPLE
+   GNU Emacs 25.0.50.1 (x86_64-pc-linux-gnu, GTK+ Version 3.10.8)
+   #+END_EXAMPLE
+   with *Org-Mode 8.0*
+
+** C++编译测试
+
+ #+BEGIN_SRC C++ :results output :exports both
+ #include <iostream>
+ int main()
+ {
+     std::cout << "Welcome to  C++ Primer" << std::endl;
+     return 0;
+ }
+ #+END_SRC
+
+ #+RESULTS:
+ : Welcome to  C++ Primer
+
+* Week 1 C++基础入门
+
+** 项目需求
+编写一个实验楼课程管理程序，程序具备下述功能：
+1) 程序运行后可以循环输入操作命令
+2) 操作命令输入0，打印出程序帮助信息，即每个操作命令的作用
+3) 操作命令输入1，打印出程序中存储的所有课程ID和课程名
+4) 输入2，打印出课程数量
+5) 输入3，打印出名字最长的课程信息，如果有多个相同长度的课程名请都打印出
+6) 输入4，删除最后一个课程，如果没有课程需要返回错误信息
+7) 输入5，退出程序
+请独立完成程序，用到的知识点都在书中可以找到，遇到问题请及时提问，优秀的同学作业会展示在下周的实验文档中。
