@@ -35,19 +35,76 @@ int main()
 }
 #+END_SRC
 
-**** 嵌套注释
-     #+BEGIN_SRC C++ :results raw :exports both
+**** 练习1.11
+     #+BEGIN_SRC C++
      #include <iostream>
 
      int main()
      {
-     std:cout << ""
+         int start = 0,  end = 0;
+         std::cout << "Input two numbers, I'll return the sum of numbers between them." <<std::endl;
+         std::cin >> start >> end;
+         int ord_start = start;
+         int ord_end = end;
+         int sum = 0;
+         while (start < end)
+         {
+             /*
+              ,* an unefficient way to sum these numbers
+              ,*/
+             ++start;
+             --end;
+             if(start != end)
+             {
+                 std::cout << "That are " << start << "+" << end << " = " << start+end <<std::endl;
+                 sum += start+end ;
+             }
+             else
+             {
+                 std::cout << "Left only one number: " << start <<std::endl;
+                 sum += start;
+             }
+            std::cout << "Sum is " << sum << std::endl;
+         }
+         std::cout << "The sum of numbers between " << ord_start << " and " << ord_end << " is " << sum << std::endl;
+         return 0;
      }
      #+END_SRC
-**** 练习1.11
-     #+BEGIN_SRC C++
 
+**** 练习1.15
+     #+BEGIN_SRC C++
+     #include <iostream>
+
+     int main()
+     {
+         int a = '1'; // Type Error
+         b = 2; // Decleartion Error
+         std::cout << "a + b =" << std::endl //Syntax Error
+     }
      #+END_SRC
+     编译源代码
+     #+BEGIN_QUOTE
+     g++ test15.cpp -o error -Wall
+     #+END_QUOTE
+     提示错误信息:
+     #+BEGIN_EXAMPLE
+     test15.cpp: In function ‘int main()’:
+     test15.cpp:6:5: error: ‘b’ was not declared in this scope
+     b = 2; // Decleartion Error
+     ^
+
+     test15.cpp:8:1: error: expected ‘;’ before ‘}’ token
+     }
+     ^
+     test15.cpp:5:9: warning: unused variable ‘a’ [-Wunused-variable]
+     int a = '1'; // Type Error
+         ^
+     #+END_EXAMPLE
+     注意, 并未提示变量 =a= 的类型错误.
+**** 练习1.23
+
+**** 练习1.25
+
 *** 核心知识点
 - 如何编译及运行一个简单的C++程序
 - 基本的输入与输出（ =stdin= 与  =stdout= ）及 =iostream= 库如何使用
@@ -68,7 +125,7 @@ int main()
  核心知识点包含：
 
  - C++的内置类型的概念及使用场景：bool char short int long float double
- - *【难点】* [fn:1]不同数据类型间类型转换的方法及预期结果
+ - *【难点】* [fn:1] 不同数据类型间类型转换的方法及预期结果
  - 作用域的概念
  - 如何定义和使用变量
  - *【难点】*  复合类型的概念与使用（引用，指针）
